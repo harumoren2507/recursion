@@ -6,39 +6,28 @@
 /*   By: retoriya <retoriya@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 21:01:04 by retoriya          #+#    #+#             */
-/*   Updated: 2024/04/09 23:32:00 by retoriya         ###   ########.fr       */
+/*   Updated: 2024/04/11 15:00:35 by retoriya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-unsigned int    ft_strlen(char *str)
-{
-    unsigned int    len;
-    
-    len = 0;
-    while (*str)
-    {
-        str++;
-        len++;
-    }
-    return (len);
-}
+#include "libft.h"
 
-unsigned int    ft_strlcat(char *dest, char *src, unsigned int  dest_size)
+size_t    ft_strlcat(char *dest, const char *src, size_t  dest_size)
 {
-    int i;
-    int j;
+    size_t i;
+    size_t j;
 
-    unsigned int    src_len;
-    unsigned int    dest_len;
+    size_t  src_len;
+    size_t  dest_len;
 
     src_len = ft_strlen(src);
     dest_len = ft_strlen(dest);
 
-    i = src_len;
-    j = 0;
     if (dest_size <= dest_len)
-        return (src_len + dest_len);
-    while (src[j] && j < dest_size - 1)
+        return (dest_size + src_len);
+    i = dest_len;
+    j = 0;
+    while (src[j] && i < dest_size - 1)
     {
         dest[i] = src[j];
         i++;
@@ -48,9 +37,24 @@ unsigned int    ft_strlcat(char *dest, char *src, unsigned int  dest_size)
     return (dest_len + src_len);
 }
 
+/*
+#include <stdlib.h>
+#include <stdio.h>
 int main(int argc, char *argv[])
 {
-    unsigned int    src_len;
-    unsigned int    dest_len;
-
+    if (argc < 3)
+    {
+        printf("usage: %s <string1> <string2>\n", argv[0]);
+        return (1);
+    }
+    size_t    dest_size = ft_strlen(argv[1]) + ft_strlen(argv[2]) + 1;
+    char *dest = (char *)malloc(sizeof(char) * dest_size);
+    if (dest == NULL)
+        return (1);
+    dest[0] = '\0';
+    ft_strlcat(dest, argv[1], dest_size);
+    ft_strlcat(dest, argv[2], dest_size);
+    printf("%s\n", dest);
+    free(dest);
 }
+*/
