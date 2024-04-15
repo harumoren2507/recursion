@@ -1,8 +1,8 @@
 #基本設定
-NAME = libft.a
+NAME=libft.a
 
 cc=cc
-CFLAGS =-Wall -Wextra -Werror
+CFLAGS=-Wall -Wextra -Werror
 
 #ソースファイルとオブジェクトファイル
 SRCS= 

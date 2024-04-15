@@ -1,26 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: retoriya <retoriya@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/11 14:32:46 by retoriya          #+#    #+#             */
-/*   Updated: 2024/04/14 16:39:59 by retoriya         ###   ########.fr       */
+/*   Created: 2024/04/14 15:34:33 by retoriya          #+#    #+#             */
+/*   Updated: 2024/04/14 16:41:29 by retoriya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-size_t	ft_strlen(const char *str)
+int	ft_isprint(int c)
 {
-	size_t	len;
-
-	len = 0;
-	while (*str)
-	{
-		str++;
-		len++;
-	}
-	return (len);
+	if (32 <= c && c <= 126)
+		return (1);
+	return (0);
 }

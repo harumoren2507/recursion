@@ -1,46 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: retoriya <retoriya@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/11 15:17:08 by retoriya          #+#    #+#             */
-/*   Updated: 2024/04/14 16:34:04 by retoriya         ###   ########.fr       */
+/*   Created: 2024/04/11 15:17:12 by retoriya          #+#    #+#             */
+/*   Updated: 2024/04/14 15:25:52 by retoriya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+void	*ft_memmove(void *dest, const void *src, size_t n)
 {
 	unsigned char	*dest_ptr;
 	unsigned char	*src_ptr;
-	size_t			i;
 
 	if (!dest && !src)
 		return (NULL);
 	dest_ptr = (unsigned char *)dest;
 	src_ptr = (unsigned char *)src;
-	i = 0;
-	while (i < n)
+	if (dest_ptr <= src_ptr)
+		ft_memcpy(dest_ptr, src_ptr, n);
+	else
 	{
-		dest_ptr[i] = src_ptr[i];
-		i++;
+		while (n--)
+		{
+			dest_ptr[n] = src_ptr[n];
+		}
 	}
 	return (dest);
 }
 /*
 int	main(void)
 {
-	char	dest[20];
-	char	*src;
-	char	*buf;
-
-	src = "123456789";
-	buf = ft_memcpy(dest, src, 5);
-	dest[5] = '\0';
-	printf("%s\n", buf);
+	char str1[] = "abcdefg";
+	ft_memmove(str1 + 2, str1, 3);
+	printf("%s\n", str1);
 	return (0);
 }
 */
