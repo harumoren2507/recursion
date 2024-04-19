@@ -6,7 +6,7 @@
 /*   By: retoriya <retoriya@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/14 19:45:18 by retoriya          #+#    #+#             */
-/*   Updated: 2024/04/15 15:28:08 by retoriya         ###   ########.fr       */
+/*   Updated: 2024/04/16 12:52:31 by retoriya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char *newarray;
-	size_t len_s;
+	char	*newarray;
+	size_t	len_s;
 
 	if (!s)
 		return (NULL);
@@ -32,9 +32,4 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		return (NULL);
 	ft_strlcpy(newarray, s + start, len + 1);
 	return (newarray);
-}
-
-int main(void)
-{
-    
 }

@@ -6,7 +6,7 @@
 /*   By: retoriya <retoriya@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 21:01:04 by retoriya          #+#    #+#             */
-/*   Updated: 2024/04/14 16:30:14 by retoriya         ###   ########.fr       */
+/*   Updated: 2024/04/17 14:03:13 by retoriya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,9 @@ size_t	ft_strlcat(char *dest, const char *src, size_t dest_size)
 	size_t	dest_len;
 
 	src_len = ft_strlen(src);
-	dest_len = ft_strlen(dest);
+	dest_len = 0;
+	if (dest)
+		dest_len = ft_strlen(dest);
 	if (dest_size <= dest_len)
 		return (dest_size + src_len);
 	i = dest_len;

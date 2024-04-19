@@ -6,7 +6,7 @@
 /*   By: retoriya <retoriya@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/14 20:21:26 by retoriya          #+#    #+#             */
-/*   Updated: 2024/04/14 20:33:38 by retoriya         ###   ########.fr       */
+/*   Updated: 2024/04/17 11:04:20 by retoriya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	const char *last_pos;
+	const char	*last_pos;
 
 	last_pos = NULL;
 	while (*s)

@@ -6,10 +6,40 @@
 /*   By: retoriya <retoriya@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 16:00:05 by retoriya          #+#    #+#             */
-/*   Updated: 2024/04/17 23:54:41 by retoriya         ###   ########.fr       */
+/*   Updated: 2024/04/17 13:42:34 by retoriya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-aa
+void	ft_striteri(char *s, void (*f)(unsigned int, char *))
+{
+	int	i;
+
+	i = 0;
+	if (!s || !f)
+		return ;
+	while (s[i])
+	{
+		f(i, &s[i]);
+		i++;
+	}
+}
+/*
+void	upper(unsigned int	i, char *str)
+{
+	(void)i;
+	if (*str >= 'a' && *str <= 'z')
+		*str -= 32;
+}
+
+int	main(int argc, char *argv[])
+{
+	if (argc == 2)
+	{
+		ft_striteri(argv[1], upper);
+		printf("%s\n", argv[1]);
+	}
+	return (0);
+}
+*/

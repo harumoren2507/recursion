@@ -6,15 +6,15 @@
 /*   By: retoriya <retoriya@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/14 19:40:32 by retoriya          #+#    #+#             */
-/*   Updated: 2024/04/14 19:42:02 by retoriya         ###   ########.fr       */
+/*   Updated: 2024/04/16 12:51:57 by retoriya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_tolower(int c)
+int	ft_tolower(int c)
 {
-    if (c >= 'A' && c <= 'Z')
-        c += 32;
-    return (c); 
+	if (c >= 'A' && c <= 'Z')
+		c += 32;
+	return (c);
 }

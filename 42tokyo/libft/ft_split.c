@@ -6,7 +6,7 @@
 /*   By: retoriya <retoriya@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/07 07:57:38 by retoriya          #+#    #+#             */
-/*   Updated: 2024/04/14 08:35:59 by retoriya         ###   ########.fr       */
+/*   Updated: 2024/04/18 17:14:27 by retoriya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,11 @@ static void	split_word(char *str, char **result, char c)
 		if (end > start)
 		{
 			result[i] = alloc_word(start, end);
+			if (!result[i])
+			{
+				free_array(result, i);
+				return ;
+			}
 			i += 1;
 		}
 	}
@@ -93,7 +98,7 @@ char	**ft_split(char *str, char c)
 	wordcount = get_wordcount(str, c);
 	result = (char **)malloc(sizeof(char *) * (wordcount + 1));
 	if (result == NULL)
-		return (free_array(result, c));
+		return (NULL);
 	split_word(str, result, c);
 	return (result);
 }

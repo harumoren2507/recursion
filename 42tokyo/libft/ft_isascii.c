@@ -5,14 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: retoriya <retoriya@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/14 15:57:37 by retoriya          #+#    #+#             */
-/*   Updated: 2024/04/14 18:46:13 by retoriya         ###   ########.fr       */
+/*   Created: 2024/04/17 11:02:31 by retoriya          #+#    #+#             */
+/*   Updated: 2024/04/17 11:02:37 by retoriya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isascii(int c)
 {
 	if (c >= 0 && c <= 127)
-		return (0);
+		return (1);
 	return (0);
 }
